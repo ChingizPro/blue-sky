@@ -1,0 +1,4 @@
+# ignore sass folder
+sass/
+# ignore .vscode folder
+.vscode/
