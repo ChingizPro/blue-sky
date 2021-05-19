@@ -1,6 +1,7 @@
 (() => {
     const menu = $('.menu__list');
     const toggler = $('.menu__toggler');
+    const links = $('.menu__link');
 
     openMenu = () => {
         toggler.addClass('toggler__active');
@@ -49,6 +50,21 @@
             $('.lang-list').removeClass('lang-list--open');
             $('.lang-list').addClass('lang-list--closed');
         }
-
     });
+
+    $('#inner-menu2').on('click', () => {
+        if ($('.lang-list2').hasClass('lang-list--closed')) {
+            $('.lang-list2').removeClass('lang-list--closed');
+            $('.lang-list2').addClass('lang-list--open');
+        } else {
+            $('.lang-list2').removeClass('lang-list--open');
+            $('.lang-list2').addClass('lang-list--closed');
+        }
+    });
+
+    // * activating nav link
+    links.on('click', (e) => {
+        $('.menu__link.active-link').removeClass('active-link');
+        $(e.target).addClass('active-link');
+    })
 })();
